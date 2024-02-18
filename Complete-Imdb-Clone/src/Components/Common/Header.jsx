@@ -19,7 +19,6 @@ const StyledToolBar = styled(Toolbar)`
   min-height: 56px !important;
   padding: 0 150px !important;
   justify-content: space-between;
-  align-items: center;
 
   & > * {
     padding: 0 16px;
@@ -66,7 +65,7 @@ function Header() {
     }
 
   return (
-    <AppBar>
+    <AppBar position="static">
       <StyledToolBar>
         <Logo src={logoURL} alt="logo" />
         {/* Box is the replacement for div tag */}
