@@ -38,6 +38,9 @@ function Home() {
           <UpNext movies={movies} />
         </BoxWrapper>
         <Slide movies={movies}/>
+        <Slide movies={movies}/>
+        <Slide movies={movies}/>
+        <Slide movies={movies}/>
       </Component>
     </>
   );
