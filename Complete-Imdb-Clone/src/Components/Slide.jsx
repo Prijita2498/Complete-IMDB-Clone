@@ -33,6 +33,8 @@ function Slide({ movies }) {
       responsive={responsive}
       swipable={false}
       draggable={false}
+      autoPlay={true}
+      autoPlaySpeed={1000}
       infinite={true}
       keyBoardControl={true}
       slidesToSlide={1}

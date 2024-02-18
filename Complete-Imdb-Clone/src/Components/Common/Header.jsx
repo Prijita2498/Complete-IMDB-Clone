@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import { logoURL } from "../../assets/Constants";
 import { Menu, BookmarkAdd, ArrowDropDown } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import { routePath } from "../../assets/Route";
 
 //Components
 import HeaderMenu from "./HeaderMenu";
@@ -52,9 +54,14 @@ const InputSearchField = styled(InputBase)`
   border-radius: 5px;
 `;
 
+const ProColor = styled(Box)`
+  color : dodgerblue;
+`
+
 function Header() {
 
     const [open, setOpen] = useState(null);
+    const navigate = useNavigate();
 
     const handleClick= (e) =>{
         setOpen(e.currentTarget);
@@ -67,7 +74,7 @@ function Header() {
   return (
     <AppBar position="static">
       <StyledToolBar>
-        <Logo src={logoURL} alt="logo" />
+        <Logo src={logoURL} alt="logo" onClick={()=> navigate(routePath.home) } />
         {/* Box is the replacement for div tag */}
         <Box onClick={handleClick}>
           <Menu />
@@ -75,9 +82,9 @@ function Header() {
           <Typography>Menu</Typography>
         </Box>
         <HeaderMenu open={open} handleClose={handleClose}/>
-        <InputSearchField />
+        <InputSearchField placeholder="Search For Movies" />
         <Typography>
-          IMDb<Box component="span">Pro</Box>
+          IMDb<ProColor component="span">Pro</ProColor>
         </Typography>
         <Box>
           <BookmarkAdd />

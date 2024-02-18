@@ -10,6 +10,8 @@ import {
   UPCOMING_API_URL,
   movieType,
 } from "../assets/Constants";
+
+
 import MoviesList from "../Components/Common/MoviesList";
 
 const responsive = {
@@ -35,6 +37,11 @@ const StyledBanner = styled("img")({
 const Component = styled(Box)`
   width: 80%;
   margin: auto;
+`;
+
+const BoxContainer = styled(Box)`
+ background : #F5F5F5;
+ padding : 10px;
 `;
 
 function MoviesCategory() {
@@ -85,16 +92,16 @@ function MoviesCategory() {
           ))}
         </Carousel>
 
-        <Container>
-          <Typography>IMDb Charts</Typography>
-          <Typography>IMDb {movieType[search.split("=")[1]]} Movies</Typography>
-          <Typography>
+        <BoxContainer>
+          <Typography variant="h6">IMDb Charts</Typography>
+          <Typography variant="h4">IMDb {movieType[search.split("=")[1]]} Movies</Typography>
+          <Typography style={{fontSize:12, margin:5}}>
             IMDb Top {movies.length} rated by regular IMDb Voters
           </Typography>
           <Divider/>
 
           <MoviesList movies={movies}/>
-        </Container>
+        </BoxContainer>
       </Component>
     </>
   );
